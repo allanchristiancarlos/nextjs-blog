@@ -6,6 +6,6 @@
     "packages/*"
   ],
   "scripts": {
-    "client:dev": "yarn workspace @app/client dev"
+    "dev": "yarn workspace @app/client dev"
   }
 }
