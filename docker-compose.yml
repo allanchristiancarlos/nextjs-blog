@@ -1,17 +1,17 @@
 version: "3.8"
 services:
-    app:
+    app-client:
         build:
-            context: ./
+            context: ./apps/client
             dockerfile: Dockerfile
         volumes: 
             - static-volume:/usr/src/app/.next
-    nginx:
+    app-nginx:
         restart: always
         depends_on:
-            - app
+            - app-client
         build:
-            context: ./
+            context: ./apps/client
             dockerfile: Dockerfile.nginx
         volumes: 
             - static-volume:/var/www/_next
